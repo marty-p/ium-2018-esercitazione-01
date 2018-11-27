@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     // variabili di classe
     TextView textView;
-    Button incremento,decremento,moltiplicazione,divisione;
+    Button incremento,decremento;
     EditText input;
     SeekBar seekBar;
 
@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView)findViewById(R.id.titolo);
         incremento = (Button)findViewById(R.id.incremento);
         decremento = (Button)findViewById(R.id.decremento);
-        moltiplicazione = (Button)findViewById(R.id.moltiplicazione);
-        divisione = (Button)findViewById(R.id.divisione);
         input = (EditText)findViewById(R.id.input);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
 
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         incremento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //textView.setText("+1"); prima parte esercitazione
                 updateValue(++modelValue);
             }
         });
@@ -50,21 +49,8 @@ public class MainActivity extends AppCompatActivity {
         decremento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //textView.setText("-1"); prima parte esercitazione
                 updateValue(--modelValue);
-            }
-        });
-        // handler moltiplicazione
-        moltiplicazione.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateValue(modelValue*2);
-            }
-        });
-        // handler divisione
-        divisione.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateValue(modelValue/2);
             }
         });
         // handler seekBar - per il gruppo B: lo vedremo assieme lunedì 8
